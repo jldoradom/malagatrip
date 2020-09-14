@@ -29,9 +29,24 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input  id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="">
+                            <label class="col-10 d-flex justify-content-end">Si eres gerente de establecimientos marca esta casilla</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rol" class="col-md-4 col-form-label text-md-right">Gerente</label>
+                            <div class="col-md-6">
+                                <input class="custom-box" id="rol" type="checkbox" class="form-control @error('rol') is-invalid @enderror" name="rol" value="2" required >
+
+                                @error('rol')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -52,6 +67,8 @@
                                 @enderror
                             </div>
                         </div>
+
+
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>

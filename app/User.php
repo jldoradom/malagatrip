@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\Rol;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'rol_id'
     ];
 
     /**
@@ -37,9 +38,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    // Relacion 1:1 enre usuario y establecimeinto
+    // Relacion 1:1 entre usuario y establecimeinto
     public function establecimiento(){
 
         return $this->hasOne(Establecimiento::class);
+    }
+
+    // Relacion entre el usuario y el rol
+    public function rol(){
+        return $this->belongsTo(Rol::class);
     }
 }
