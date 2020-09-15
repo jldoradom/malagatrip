@@ -2146,6 +2146,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
     var _this = this;
@@ -2169,6 +2179,9 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/establecimientos').then(function (respuesta) {
         _this2.$store.commit('AGREGAR_ESTABLECIMIENTOS', respuesta.data);
       });
+    },
+    cargarIcono: function cargarIcono(categoria) {
+      return categoria.icono;
     }
   }
 });
@@ -6927,7 +6940,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-39e6c9b3] {\n  background-color: #6272d4;\n}\nnav a[data-v-39e6c9b3] {\n  color: white;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 0.5rem 2rem;\n  text-align: center;\n  flex: 1;\n}\nnav a[data-v-39e6c9b3]:hover {\n  color: white;\n  cursor: pointer;\n}\nnav a[data-v-39e6c9b3]:nth-child(1) {\n  background-color: #a000b7;\n}\nnav a[data-v-39e6c9b3]:nth-child(2) {\n  background-color: #591d03;\n}\nnav a[data-v-39e6c9b3]:nth-child(3) {\n  background-color: #ea6a00;\n}\nnav a[data-v-39e6c9b3]:nth-child(4) {\n  background-color: #edb220;\n}\nnav a[data-v-39e6c9b3]:nth-child(5) {\n  background-color: #dd0e3f;\n}\nnav a[data-v-39e6c9b3]:nth-child(6) {\n  background-color: #0448b5;\n}\nnav a[data-v-39e6c9b3]:nth-child(7) {\n  background-color: #00a81c;\n}\n", ""]);
+exports.push([module.i, "\nnav a[data-v-39e6c9b3] {\n    color: #000000;\n    font-weight: bold;\n    text-transform: uppercase;\n    padding: 1rem 2rem;\n    text-align: center;\n    flex: 1;\n}\nnav a[data-v-39e6c9b3]:hover {\n    color: white;\n    cursor: pointer;\n    background-color: black;\n    text-decoration: none;\n}\n.custom-rounded-black[data-v-39e6c9b3] {\n    border-radius: 1rem !important;\n    border-color: black;\n    border: solid 1px;\n}\n.icono[data-v-39e6c9b3] {\n    width: 20px;\n    margin-left: 4px;\n    margin-bottom: 3px;\n}\n\n\n", ""]);
 
 // exports
 
@@ -53891,19 +53904,53 @@ var render = function() {
       "nav",
       {
         staticClass:
-          "d-flex flex-column flex-md-row container justify-content-md-center"
+          "d-flex flex-column flex-md-row container justify-content-md-center my-4"
       },
       [
         _c(
           "a",
           {
+            staticClass: "d-flex m-1 custom-rounded custom-rounded-black",
             on: {
               click: function($event) {
                 return _vm.seleccionarTodos()
               }
             }
           },
-          [_vm._v("Todos")]
+          [
+            _vm._v("Todos\n             "),
+            _c(
+              "svg",
+              {
+                staticClass: "w-6 h-6 icono",
+                attrs: {
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24",
+                  xmlns: "http://www.w3.org/2000/svg"
+                }
+              },
+              [
+                _c("path", {
+                  attrs: {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2",
+                    d:
+                      "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  }
+                }),
+                _c("path", {
+                  attrs: {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2",
+                    d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  }
+                })
+              ]
+            )
+          ]
         ),
         _vm._v(" "),
         _vm._l(_vm.categorias, function(categoria) {
@@ -53911,7 +53958,8 @@ var render = function() {
             "a",
             {
               key: categoria.id,
-              staticClass: "m-0",
+              staticClass:
+                "d-flex align-items-center m-1 custom-rounded custom-rounded-black",
               on: {
                 click: function($event) {
                   return _vm.seleccionarCategoria(categoria)
@@ -53920,7 +53968,31 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n             " + _vm._s(categoria.nombre) + "\n         "
+                "\n             " +
+                  _vm._s(categoria.nombre) +
+                  "\n\n             "
+              ),
+              _c(
+                "svg",
+                {
+                  staticClass: "w-6 h-6 icono",
+                  attrs: {
+                    fill: "none",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "stroke-linecap": "round",
+                      "stroke-linejoin": "round",
+                      "stroke-width": "2",
+                      d: categoria.icono
+                    }
+                  })
+                ]
               )
             ]
           )

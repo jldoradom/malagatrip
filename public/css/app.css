@@ -9,7 +9,7 @@
 
 :root {
   --blue: #3490dc;
-  --indigo: #6574cd;
+  --indigo: #ED7272;
   --purple: #9561e2;
   --pink: #f66d9b;
   --red: #e3342f;
@@ -10914,7 +10914,6 @@ h2,
 h3,
 h4 {
   font-weight: 900;
-  color: #6574cd;
 }
 
 #dropzone {
@@ -10922,27 +10921,23 @@ h4 {
 }
 
 .text-primary {
-  color: #6574cd !important;
+  color: #ED7272 !important;
 }
 
 .bg-primary {
-  background-color: #6574cd !important;
+  background-color: #ED7272 !important;
 }
 
 .navbar.bg-white {
-  background-color: #6574cd !important;
+  background-color: #ED7272 !important;
 }
 
 .navbar.bg-white a {
   color: white !important;
 }
 
-.navbar-nav .dropdown-menu {
-  background: #6574cd;
-}
-
 .navbar-nav .dropdown-menu a:hover {
-  background: #6574cd;
+  background: #ED7272;
 }
 
 .navbar.bg-white .navbar-brand {
@@ -10959,13 +10954,13 @@ legend {
 }
 
 .btn-primary {
-  background-color: #6574cd;
+  background-color: #ED7272;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .btn-primary:hover {
-  background-color: #3f51c1;
+  background-color: #e74545;
 }
 
 .alert-primary {
@@ -10974,7 +10969,7 @@ legend {
   margin: 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #6574cd;
+  color: #ED7272;
 }
 
 .dropzone .dz-preview .dz-image {
@@ -10988,5 +10983,54 @@ legend {
   height: auto;
   margin-top: 12px;
   width: auto;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000000;
+  margin-top: 25px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #000000;
+}
+
+.custom-rounded {
+  border-radius: 0.5rem !important;
+}
+
+.navbar-nav .dropdown-menu a:hover {
+  background: #F4A7A7;
+}
+
+.mainlogo {
+  width: 135px;
+  margin-right: 10px;
+}
+
+.alogo {
+  height: 73.34px;
+  margin: auto;
+  align-items: flex-end;
+  display: flex;
+  font-weight: 900;
+  font-size: 2.6rem;
+  color: #000000;
+}
+
+.alogo:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.containerlogo {
+  height: 57px;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute;
+    padding: 10px 15px;
+  }
 }
 

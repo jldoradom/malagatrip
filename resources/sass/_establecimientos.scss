@@ -6,7 +6,7 @@ body {
 }
 h1, h2, h3, h4 {
     font-weight: 900;
-    color: $indigo;
+
 }
 
 #dropzone {
@@ -29,7 +29,7 @@ h1, h2, h3, h4 {
 }
 
 .navbar-nav .dropdown-menu {
-    background: $indigo;
+
 
     a:hover {
         background: $indigo;
@@ -81,4 +81,54 @@ legend {
     margin-top: 12px;
     width: auto;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+    margin-top: 25px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #000000;
+
+}
+
+.custom-rounded {
+    border-radius: 0.5rem !important;
+
+}
+
+.navbar-nav .dropdown-menu a:hover {
+    background: $indigoLight;
+}
+
+.mainlogo{
+    width: 135px;
+    margin-right: 10px;
+}
+
+.alogo {
+    height: 73.34px;
+    margin: auto;
+    align-items: flex-end;
+    display: flex;
+    font-weight: 900;
+    font-size: 2.6rem;
+    color: #000000;
+    &:hover {
+       color: #000000;
+       text-decoration: none;
+     }
+}
+
+.containerlogo {
+    height: 57px;
+}
+
+@media (min-width: 768px){
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        position: absolute;
+        padding: 10px 15px;
+    }
+}
+
 

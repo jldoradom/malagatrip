@@ -1,12 +1,22 @@
 <template>
     <div>
-        <nav class="d-flex flex-column flex-md-row container justify-content-md-center">
-            <a @click="seleccionarTodos()">Todos</a>
+        <nav class="d-flex flex-column flex-md-row container justify-content-md-center my-4">
+            <a @click="seleccionarTodos()"  class="d-flex m-1 custom-rounded custom-rounded-black">Todos
+                <svg class="w-6 h-6 icono" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </a>
             <a v-for="categoria in categorias"
                 v-bind:key="categoria.id"
-                class="m-0"
+                class="d-flex align-items-center m-1 custom-rounded custom-rounded-black"
                 @click="seleccionarCategoria(categoria)">
                 {{ categoria.nombre }}
+
+                <svg class="w-6 h-6 icono" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      :d="categoria.icono">
+
+                    </path>
+                </svg>
             </a>
         </nav>
    </div>
@@ -35,46 +45,42 @@ export default {
                 .then(respuesta => {
                 this.$store.commit('AGREGAR_ESTABLECIMIENTOS' , respuesta.data);
             })
+        },
+        cargarIcono(categoria){
+            return categoria.icono;
         }
     },
 }
 </script>
 
 <style scoped>
-div {
-  background-color: #6272d4;
-}
+
 nav a {
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 0.5rem 2rem;
-  text-align: center;
-  flex: 1;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    text-align: center;
+    flex: 1;
 }
 nav a:hover {
-  color: white;
-  cursor: pointer;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    text-decoration: none;
 }
-nav a:nth-child(1) {
-  background-color: #a000b7;
+
+.custom-rounded-black {
+    border-radius: 1rem !important;
+    border-color: black;
+    border: solid 1px;
 }
-nav a:nth-child(2) {
-  background-color: #591d03;
+
+.icono {
+    width: 20px;
+    margin-left: 4px;
+    margin-bottom: 3px;
 }
-nav a:nth-child(3) {
-  background-color: #ea6a00;
-}
-nav a:nth-child(4) {
-  background-color: #edb220;
-}
-nav a:nth-child(5) {
-  background-color: #dd0e3f;
-}
-nav a:nth-child(6) {
-  background-color: #0448b5;
-}
-nav a:nth-child(7) {
-  background-color: #00a81c;
-}
+
+
 </style>
