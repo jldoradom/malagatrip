@@ -18,6 +18,9 @@ var _default = new _vuex["default"].Store({
     bares: [],
     restaurantes: [],
     hoteles: [],
+    tiendas: [],
+    cafeterias: [],
+    talleres: [],
     establecimiento: {},
     establecimientos: [],
     categorias: [],
@@ -32,6 +35,15 @@ var _default = new _vuex["default"].Store({
     },
     AGREGAR_HOTELES: function AGREGAR_HOTELES(state, hoteles) {
       state.hoteles = hoteles;
+    },
+    AGREGAR_TIENDAS: function AGREGAR_TIENDAS(state, tiendas) {
+      state.tiendas = tiendas;
+    },
+    AGREGAR_CAFETERIAS: function AGREGAR_CAFETERIAS(state, cafeterias) {
+      state.cafeterias = cafeterias;
+    },
+    AGREGAR_TALLERES: function AGREGAR_TALLERES(state, talleres) {
+      state.talleres = talleres;
     },
     AGREGAR_ESTABLECIMIENTO: function AGREGAR_ESTABLECIMIENTO(state, establecimiento) {
       state.establecimiento = establecimiento;

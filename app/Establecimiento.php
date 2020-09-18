@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Establecimiento extends Model
@@ -26,5 +27,10 @@ class Establecimiento extends Model
     // Relacion 1:1 entre el establecimiento y la categoria
     public function categoria(){
         return $this->belongsTo(Categoria::class);
+    }
+
+    // Likes que tiene el establecimiento
+    public function likes(){
+        return $this->belongsToMany(User::class, 'likes_establecimiento');
     }
 }

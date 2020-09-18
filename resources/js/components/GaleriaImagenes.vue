@@ -1,8 +1,8 @@
 <template>
   <div>
-      <h2 class="mt-4">Galeria de Imagenes</h2>
+      <h4 class="mt-4">Galeria</h4>
       <ul class="row list-unstyled mt-4">
-          <li class="col-md-4 mb-4" v-for=" imagen in this.imagenes " v-bind:key="imagen.id">
+          <li class="mb-4" v-for=" imagen in this.imagenes " v-bind:key="imagen.id">
             <a :href='`/storage/${imagen.ruta_imagen}`' data-lightbox="imagenes" data-title="Imagen establecimiento">
                 <img  :src='`/storage/${imagen.ruta_imagen}`' class="img-fluid">
             </a>

@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-md navbar-light  shadow-sm">
             <div class="container">
                 <div class="d-flex containerlogo">
-                    <img src="images/iconos/mainlogo.svg" alt="main logo" class="mainlogo">
+                    <img src="/images/iconos/mainlogo.svg" alt="main logo" class="mainlogo">
                     <a class="text-black alogo" href="{{ url('/') }}">
                         {{ config('app.name') }}
                     </a>
@@ -65,7 +65,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                   <a class="dropdown-item custom-rounded" href="#">Ver perfil</a>
-                                  <a class="dropdown-item custom-rounded" href="#">Panel</a>
+                                  <a class="dropdown-item custom-rounded" href="{{ route('establecimeinto.create') }}">Panel</a>
                                   <a class="dropdown-item custom-rounded" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -15,6 +15,8 @@ var _InicioEstablecimientos = _interopRequireDefault(require("../components/Inic
 
 var _MostrarEstablecimiento = _interopRequireDefault(require("../components/MostrarEstablecimiento"));
 
+var _NuevoComentario = _interopRequireDefault(require("../components/NuevoComentario"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var routes = [{
@@ -24,6 +26,10 @@ var routes = [{
   path: '/establecimiento/:id',
   name: "establecimiento",
   component: _MostrarEstablecimiento["default"]
+}, {
+  path: '/comentario/:id',
+  name: 'comentario',
+  component: _NuevoComentario["default"]
 }];
 var router = new _vueRouter["default"]({
   mode: 'history',

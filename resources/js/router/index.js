@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import VuePageTransition from 'vue-page-transition';
 import InicioEstablecimientos from '../components/InicioEstablecimientos';
 import MostrarEstablecimiento from '../components/MostrarEstablecimiento';
+import NuevoComentario from '../components/NuevoComentario';
 
 const  routes = [
 
@@ -15,6 +16,11 @@ const  routes = [
         name: "establecimiento",
         component: MostrarEstablecimiento
     },
+    {
+        path:'/comentario/:id',
+        name:'comentario',
+        component: NuevoComentario
+    }
 
 ]
 

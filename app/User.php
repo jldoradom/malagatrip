@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Rol;
+use App\Establecimiento;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -47,5 +48,10 @@ class User extends Authenticatable implements MustVerifyEmail
     // Relacion entre el usuario y el rol
     public function rol(){
         return $this->belongsTo(Rol::class);
+    }
+
+    // Establecimiento a los que dio me gusta
+    public function meGusta(){
+        return $this->belongsToMany(Establecimiento::class, 'likes_establecimiento');
     }
 }

@@ -9,6 +9,9 @@ export default new Vuex.Store({
         bares: [],
         restaurantes: [],
         hoteles: [],
+        tiendas: [],
+        cafeterias: [],
+        talleres: [],
         establecimiento: {},
         establecimientos: [],
         categorias: [],
@@ -25,6 +28,15 @@ export default new Vuex.Store({
         },
         AGREGAR_HOTELES(state, hoteles){
             state.hoteles = hoteles;
+        },
+        AGREGAR_TIENDAS(state, tiendas){
+            state.tiendas = tiendas;
+        },
+        AGREGAR_CAFETERIAS(state, cafeterias){
+            state.cafeterias = cafeterias;
+        },
+        AGREGAR_TALLERES(state, talleres){
+            state.talleres = talleres;
         },
         AGREGAR_ESTABLECIMIENTO(state, establecimiento){
             state.establecimiento = establecimiento;

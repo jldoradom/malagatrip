@@ -24,7 +24,7 @@
 <script>
 export default {
     mounted() {
-        axios.get('/api/categorias/restaurant')
+        axios.get('/api/categorias/restaurante')
             .then(response => {
               this.$store.commit("AGREGAR_RESTAURANTES" , response.data);
             })

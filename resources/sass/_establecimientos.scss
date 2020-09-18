@@ -1,4 +1,4 @@
-$body-bg: #f8fafc;
+$body-bg: #f2f2f2;
 
 body {
     font-family: 'Lato', sans-serif;
@@ -50,12 +50,16 @@ legend {
 }
 
 .btn-primary {
-    background-color: $indigo;
+    background-color: #000000;
+    border-color: #000000;
     font-weight: bold;
     text-transform: uppercase;
 
     &:hover {
-       background-color: darken($indigo, 10);
+       background-color:#ffffff;
+       color: #000000;
+       border-color: #000;
+
     }
 }
 
@@ -122,6 +126,13 @@ legend {
 
 .containerlogo {
     height: 57px;
+}
+
+.infobox {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #fff;
+    margin: 2rem 0px;
 }
 
 @media (min-width: 768px){

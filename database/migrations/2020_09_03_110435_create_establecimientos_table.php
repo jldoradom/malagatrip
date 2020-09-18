@@ -17,6 +17,7 @@ class CreateEstablecimientosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('slug');
+            $table->text('icono');
             $table->timestamps();
         });
 

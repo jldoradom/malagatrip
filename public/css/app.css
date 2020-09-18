@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: #f2f2f2;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -510,7 +510,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: #f2f2f2;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -4242,15 +4242,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #f2f2f2, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #f2f2f2, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #f2f2f2, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4456,8 +4456,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f8fafc;
-  border-color: #dee2e6 #dee2e6 #f8fafc;
+  background-color: #f2f2f2;
+  border-color: #dee2e6 #dee2e6 #f2f2f2;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10906,7 +10906,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #f8fafc;
+  background-color: #f2f2f2;
 }
 
 h1,
@@ -10954,13 +10954,16 @@ legend {
 }
 
 .btn-primary {
-  background-color: #ED7272;
+  background-color: #000000;
+  border-color: #000000;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .btn-primary:hover {
-  background-color: #e74545;
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #000;
 }
 
 .alert-primary {
@@ -11027,10 +11030,73 @@ legend {
   height: 57px;
 }
 
+.infobox {
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  background: #fff;
+  margin: 2rem 0px;
+}
+
 @media (min-width: 768px) {
   .navbar-expand-md .navbar-nav .dropdown-menu {
     position: absolute;
     padding: 10px 15px;
+  }
+}
+
+.like-btn {
+  display: inline-block;
+  Cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+
+.like-btn {
+  background: url("https://i.ibb.co/vw78mf3/heart.png") no-repeat 0% 50%;
+  background-size: 2900%;
+}
+
+.like-active {
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.like-active {
+  -webkit-animation-timing-function: steps(28);
+          animation-timing-function: steps(28);
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: right;
   }
 }
 

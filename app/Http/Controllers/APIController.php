@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Imagen;
 use App\Categoria;
 use App\Establecimiento;
@@ -9,6 +10,8 @@ use Illuminate\Http\Request;
 
 class APIController extends Controller
 {
+
+
     // Metodo para obtener todos los establecimientos
     public function index(){
         $establecimientos = Establecimiento::with('categoria')->get();
@@ -30,7 +33,6 @@ class APIController extends Controller
         // Obtener los establecimientos por la categoria nos traemos la info de la categoria gracias a
         // la relacion creada en el modelo de establecimiento entre este y la categoria
         $establecimientos = Establecimiento::where('categoria_id', $categoria->id)->with('categoria')->take(3)->get();
-
         return response()->json($establecimientos);
 
     }
@@ -49,4 +51,26 @@ class APIController extends Controller
 
         return response()->json($establecimiento);
     }
+
+    // Muestra los likes de un establecimiento
+    public function establecimientosLikes(Establecimiento $establecimiento){
+
+        $likes = count($establecimiento->likes);
+
+        return response()->json($likes);
+    }
+
+    // Devueve si el usuario dio like al establecimiento
+    public function userLike(Establecimiento $establecimiento){
+
+        $like = ( auth()->user() ) ? auth()->user()->meGusta->contains($establecimiento->id) : false;
+
+
+        return $like;
+
+    }
+
+
+
+
 }
