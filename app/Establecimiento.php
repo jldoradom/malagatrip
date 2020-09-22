@@ -33,4 +33,9 @@ class Establecimiento extends Model
     public function likes(){
         return $this->belongsToMany(User::class, 'likes_establecimiento');
     }
+
+    // Relacion entre el establecimiento y los comentarios
+    public function comentarios(){
+        return $this->hasMany(Comentario::class);
+    }
 }

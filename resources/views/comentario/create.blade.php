@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="text-center mt-4">Cuentanos que te ha parecido</h1>
     <div class="mt-5 row justify-content-center ">
-        <form method="POST"  action="{{ route('comentario.store') }}"
+        <form method="POST"  action="{{ route('comentario.store', ['establecimiento' => $establecimiento->id]) }}"
                 enctype="multipart/form-data"
                 class="col-md-9 col-xs-12 card card-body">
                 @csrf
@@ -45,7 +45,7 @@
             <fieldset class="border p-4 mt-5">
                 <legend  class="text-primary">Valoraciones: </legend>
                 <div class="form-group">
-                    <label for="nombre">Como fue el trato</label>
+                    <label for="nombre">¿Como fue el servicio que te dierón?</label>
                     <textarea
                         class="form-control  @error('servicio')  is-invalid  @enderror"
                         name="servicio"

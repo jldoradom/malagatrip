@@ -34,6 +34,6 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
 
     // Opiniones
     Route::get('comentario/create/{establecimiento}' , 'ComentarioController@create')->name('comentario.create');
-    Route::get('comentario/store' , 'ComentarioController@store')->name('comentario.store');
+    Route::post('comentario/store/{establecimiento}' , 'ComentarioController@store')->name('comentario.store');
 });
 

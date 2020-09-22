@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Nota;
 use App\Comentario;
+use App\Establecimiento;
 use Illuminate\Http\Request;
 
 class ComentarioController extends Controller
@@ -15,11 +16,11 @@ class ComentarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Establecimiento $establecimiento)
     {
         //
         $notas = Nota::all();
-        return view('comentario.create', compact('notas'));
+        return view('comentario.create', compact('notas', 'establecimiento'));
     }
 
     /**
@@ -28,9 +29,46 @@ class ComentarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Establecimiento $establecimiento)
     {
-        //
+
+
+        // Validacion
+        $data = $request->validate([
+            'titulo' => 'required',
+            'texto' => 'required|min:50',
+            'servicio' => 'required',
+            'precio' => 'required',
+            'precio' => 'required',
+            'nota' => 'required'
+
+        ]);
+
+
+
+
+        // Guardar en la db
+        $comentario = new Comentario($data);
+        $comentario->user_id = auth()->user()->id;
+        $comentario->nota_id = $data['nota'];
+        $comentario->establecimiento_id = $establecimiento->id;
+
+        $userComentYet = Comentario::where('user_id', '=', auth()->user()->id)
+                                    ->where('establecimiento_id' , '=' , $establecimiento->id)->get();
+
+        if($userComentYet){
+            return back()->with('estado', 'No puedes dejar más de un comentario por establecimiento');
+        } else {
+            $comentario->save();
+            return back()->with('estado', 'Tu información se almacenó correctamente');
+        }
+
+
+
+
+
+
+
     }
 
     /**
