@@ -11,6 +11,7 @@
                 <div class="mb-4 p-4 infobox order-3">
                     <div class="d-flex justify-content-between">
                         <h4 class="mt-2">Que opinan de nosotros</h4>
+                         <!-- <router-link class="enlace mt-2 btn btn-primary d-block" :to="{ name: 'comentario' , params: {id: establecimiento.id} }">Déjanos tu oponión</router-link> -->
                         <a class="mt-2 btn btn-primary d-block" :href="`/comentario/create/${establecimiento.id}`">Déjanos tu oponión</a>
                     </div>
                     <div class="infobox p-3">

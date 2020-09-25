@@ -11,6 +11,7 @@
 
 
             <fieldset class="border p-4 mt-5">
+                <a class="mt-2 mb-2 btn btn-primary d-block" href="/">Volver al inicio</a>
                 <legend  class="text-primary">Tu comentario: </legend>
                 <div class="form-group">
                     <label for="nombre">Titulo</label>

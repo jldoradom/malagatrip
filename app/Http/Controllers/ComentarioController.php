@@ -46,7 +46,6 @@ class ComentarioController extends Controller
 
 
 
-
         // Guardar en la db
         $comentario = new Comentario($data);
         $comentario->user_id = auth()->user()->id;
@@ -62,11 +61,6 @@ class ComentarioController extends Controller
             $comentario->save();
             return back()->with('estado', 'Tu información se almacenó correctamente');
         }
-
-
-
-
-
 
 
     }

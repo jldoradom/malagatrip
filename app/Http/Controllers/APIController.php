@@ -51,7 +51,6 @@ class APIController extends Controller
 
         return response()->json($establecimiento);
     }
-
     // Muestra los likes de un establecimiento
     public function establecimientosLikes(Establecimiento $establecimiento){
 
@@ -59,18 +58,6 @@ class APIController extends Controller
 
         return response()->json($likes);
     }
-
-    // Devueve si el usuario dio like al establecimiento
-    public function userLike(Establecimiento $establecimiento){
-
-        $like = ( auth()->user() ) ? auth()->user()->meGusta->contains($establecimiento->id) : false;
-
-
-        return $like;
-
-    }
-
-
 
 
 }

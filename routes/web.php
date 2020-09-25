@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::post('/imagenes/store' , 'ImagenController@store')->name('imagen.store');
     Route::post('/imagenes/destroy' , 'ImagenController@destroy')->name('imagen.destroy');
 
-    // Opiniones
+    // Comentarios
     Route::get('comentario/create/{establecimiento}' , 'ComentarioController@create')->name('comentario.create');
     Route::post('comentario/store/{establecimiento}' , 'ComentarioController@store')->name('comentario.store');
 });
